@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2037
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Steamvania", "Steamvania\Steamvania.vcxproj", "{FAA84C84-DD84-4214-ACA7-F75C2EA4261B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FAA84C84-DD84-4214-ACA7-F75C2EA4261B}.Debug|x64.ActiveCfg = Debug|x64
+		{FAA84C84-DD84-4214-ACA7-F75C2EA4261B}.Debug|x64.Build.0 = Debug|x64
+		{FAA84C84-DD84-4214-ACA7-F75C2EA4261B}.Debug|x86.ActiveCfg = Debug|Win32
+		{FAA84C84-DD84-4214-ACA7-F75C2EA4261B}.Debug|x86.Build.0 = Debug|Win32
+		{FAA84C84-DD84-4214-ACA7-F75C2EA4261B}.Release|x64.ActiveCfg = Release|x64
+		{FAA84C84-DD84-4214-ACA7-F75C2EA4261B}.Release|x64.Build.0 = Release|x64
+		{FAA84C84-DD84-4214-ACA7-F75C2EA4261B}.Release|x86.ActiveCfg = Release|Win32
+		{FAA84C84-DD84-4214-ACA7-F75C2EA4261B}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5CE61F80-2906-49F4-ABCC-77DD6ED31056}
+	EndGlobalSection
+EndGlobal
