@@ -1,27 +1,40 @@
 #include <SFML/Graphics.hpp>
+#include <SFML/Window.hpp>
+#include <SFML/OpenGL.hpp>
+#include <iostream>
+#include "GraphicsSettings.h"
+#include "GameEngine.h"
+#include "IntroState.h"
 
 int main()
 {
-	sf::RenderWindow window(sf::VideoMode(200, 200), "SFML works!");
-	sf::CircleShape shape(100.f);
-	shape.setFillColor(sf::Color::Green);
 
-	while (window.isOpen())
+	sf::Clock clock;
+	sf::Time base_t = clock.getElapsedTime();
+	sf::Time curr_t = clock.getElapsedTime();
+	int counter = 0;
+
+	GameEngine game; 
+
+	game.init("Steamvania");
+
+	game.changeState(IntroState::Instance());
+
+	while (game.running())
 	{
-		sf::Event event;
-		while (window.pollEvent(event))
-		{
-			if (event.type == sf::Event::Closed)
-				window.close();
+		game.handleEvents();	
+		game.update();
+		game.draw();
+
+		counter += 1;
+		curr_t = clock.getElapsedTime();
+		if ((curr_t).asMilliseconds() > 1000) {
+			std::cout << counter << "\n";
+			counter = 0;
+			clock.restart();
 		}
-
-		window.clear();
-		window.draw(shape);
-		window.display();
-
-
-
 	}
 
 	return 0;
 }
+
