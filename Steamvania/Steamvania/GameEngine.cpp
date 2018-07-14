@@ -1,5 +1,6 @@
 #include "GameEngine.h"
 #include "GameState.h"
+#include "InputManager.h"
 
 void GameEngine::init(const char* title, int width, int height, int bpp, bool fullscreen) {
 	// init some shit
@@ -9,6 +10,7 @@ void GameEngine::init(const char* title, int width, int height, int bpp, bool fu
 	window->setFramerateLimit(60);
 	
 	m_running = true;
+	im = new InputManager;
 
 	printf("GameEngine init\n");
 }
@@ -30,6 +32,8 @@ void GameEngine::changeState(GameState* state) {
 
 	states.push_back(state);
 	states.back()->init();
+
+	printf("Game State changed/n");
 }
 
 void GameEngine::pushState(GameState* state)
@@ -42,6 +46,8 @@ void GameEngine::pushState(GameState* state)
 	// store and init the new state
 	states.push_back(state);
 	states.back()->init();
+
+	printf("Game state pusehd to stack");
 }
 
 void GameEngine::popState()
@@ -59,17 +65,7 @@ void GameEngine::popState()
 }
 
 void GameEngine::handleEvents() {
-	sf::Event event;
-	while (window->pollEvent(event))
-	{
-		if (event.type == sf::Event::Closed) {
-			window->close();
-		}
-		else if (event.type == sf::Event::Resized) {
-			// adjust the viewport when the window is resized
-			glViewport(0, 0, event.size.width, event.size.height);
-		}
-	}
+	im->registerInputs(this);
 
 	// let the states handles the events
 	states.back()->handleEvents(this);

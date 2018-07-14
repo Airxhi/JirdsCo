@@ -1,4 +1,5 @@
 #include "IntroState.h"
+#include "MainMenuState.h"
 
 IntroState IntroState::m_IntroState;
 
@@ -20,6 +21,13 @@ void IntroState::resume() {
 
 void IntroState::handleEvents(GameEngine* game) {
 	// handle events
+	if (InputManager::UP) { printf("Up has been pressed\n"); }
+	if (InputManager::DOWN) { printf("Down has been pressed\n"); }
+	if (InputManager::LEFT) { printf("Left has been pressed\n"); }
+	if (InputManager::RIGHT) { printf("Right has been pressed\n"); }
+
+	if (InputManager::SELECT) { changeState(game, new MainMenuState()); }
+
 }
 
 void IntroState::update(GameEngine* game) {

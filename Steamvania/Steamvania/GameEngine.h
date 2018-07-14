@@ -6,6 +6,7 @@
 using namespace std;
 
 class GameState;
+class InputManager;
 
 class GameEngine
 {
@@ -28,6 +29,7 @@ public:
 
 private:
 	vector<GameState*> states;
+	InputManager* im;
 
 	bool m_running;
 	bool m_fullscreen;

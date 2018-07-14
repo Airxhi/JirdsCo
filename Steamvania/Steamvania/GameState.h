@@ -1,5 +1,6 @@
 #pragma once
 #include "GameEngine.h"
+#include "InputManager.h"
 
 class GameState
 {

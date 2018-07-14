@@ -126,9 +126,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="GameEngine.cpp" />
+    <ClCompile Include="InputManager.cpp" />
     <ClCompile Include="IntroState.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="GraphicsSettings.cpp" />
+    <ClCompile Include="MainMenuState.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="res\test.png" />
@@ -137,7 +139,9 @@
     <ClInclude Include="GameEngine.h" />
     <ClInclude Include="GameState.h" />
     <ClInclude Include="GraphicsSettings.h" />
+    <ClInclude Include="InputManager.h" />
     <ClInclude Include="IntroState.h" />
+    <ClInclude Include="MainMenuState.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
